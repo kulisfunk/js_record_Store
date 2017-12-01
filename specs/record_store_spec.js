@@ -17,7 +17,9 @@ describe("RecordStore tests", function(){
     it("should have a name", function(){
       assert.strictEqual(record_store1.name, "Disc World");
     });
-    it("should have a city", function(){});
+    it("should have a city", function(){
+      assert.strictEqual(record_store1.city, "Glasgow");
+    });
     it("should have a balance", function(){});
     it("should have empty inventory", function(){});
     it("can add records to inventory", function(){});
