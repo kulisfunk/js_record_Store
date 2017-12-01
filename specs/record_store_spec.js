@@ -23,6 +23,8 @@ describe("RecordStore tests", function(){
     it("should have a balance", function(){
       assert.strictEqual(record_store1.balance, 100000);
     });
-    it("should have empty inventory", function(){});
+    it("should have empty inventory", function(){
+      assert.strictEqual(record_store1.inventory.length, 0);
+    });
     it("can add records to inventory", function(){});
 })
