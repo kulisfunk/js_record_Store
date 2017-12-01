@@ -8,4 +8,12 @@ var RecordStore = function(name, city){
   this.balance = 100000;
 }
 
+
+RecordStore.prototype = function(){
+
+  addRecord: function(record){
+    this.inventory.add(record);
+  }
+}
+
 module.exports = RecordStore;
