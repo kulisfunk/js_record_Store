@@ -6,13 +6,13 @@ var RecordStore = function(name, city){
   this.city = city;
   this.inventory = [];
   this.balance = 100000;
-}
+};
 
 
-RecordStore.prototype = function(){
+RecordStore.prototype = {
 
   addRecord: function(record){
-    this.inventory.add(record);
+    this.inventory.push(record);
   }
 }
 

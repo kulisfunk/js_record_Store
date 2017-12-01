@@ -27,8 +27,8 @@ describe("RecordStore tests", function(){
       assert.strictEqual(record_store1.inventory.length, 0);
     });
     it("can add records to inventory", function(){
-      record_store1.add(record1);
-      record_store1.add(record2);
+      record_store1.addRecord(record1);
+      record_store1.addRecord(record2);
       assert.strictEqual(record_store1.inventory.length, 2);
     });
 })
