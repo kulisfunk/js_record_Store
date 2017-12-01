@@ -20,5 +20,7 @@ describe("Record Tests", function(){
   it("should have a genre", function(){
     assert.strictEqual(record1.genre, "Rock");
   });
-  it("should have a price", function(){});
+  it("should have a price", function(){
+    assert.strictEqual(record1.price, 1500);
+  });
 })
