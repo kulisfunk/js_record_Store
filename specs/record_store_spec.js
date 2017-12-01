@@ -10,6 +10,10 @@ describe("RecordStore tests", function(){
     record1 = new Record("Pink Floyd", "Animals", "Rock", 1500);
     record2 = new Record("Underworld", "Beaucoup Fish", "Electronic", 1300);
 
-    
+    it("should have a name", function(){});
+    it("should have a city", function(){});
+    it("should have a balance", function(){});
+    it("should have empty inventory", function(){});
+    it("can add records to inventory", function(){});
   })
 })
