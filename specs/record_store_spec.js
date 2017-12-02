@@ -36,6 +36,12 @@ describe("RecordStore tests", function(){
       var result = record_store1.details("Animals");
       assert.deepStrictEqual(result, "Artist: Pink Floyd, title: Animals, genre: Rock, price: £15");
     });
+    it("should list inventory", function(){
+      record_store1.addRecord(record1);
+      record_store1.addRecord(record2);
+      var inventory = record_store1.listInventory();
+      assert.deepStrictEqual(inventory, [record1, record2]);
+    })
     it("should return financial situation of store", function(){
       record_store1.addRecord(record1);
       record_store1.addRecord(record2);
