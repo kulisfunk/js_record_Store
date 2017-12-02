@@ -31,9 +31,15 @@ describe("RecordStore tests", function(){
       record_store1.addRecord(record2);
       assert.strictEqual(record_store1.inventory.length, 2);
     });
-    it("should return record properties as a string", function(){
+    xit("should return record properties as a string", function(){
       record_store1.addRecord(record1);
       var result = record_store1.details("Animals");
-      assert.strictEqual(result, "Artist: Pink Floyd, title: Animals, genre: Rock, price: £15");
+      assert.deepStrictEqual(result, "Artist: Pink Floyd, title: Animals, genre: Rock, price: £15");
+    });
+    it("should return financial situation of store", function(){
+      record_store1.addRecord(record1);
+      record_store1.addRecord(record2);
+      var finances = record_store1.finances();
+      assert.strictEqual(finances, "Balance is: £1000, inventory value is: £28");
     });
 })

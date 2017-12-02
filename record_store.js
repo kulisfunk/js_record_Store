@@ -13,7 +13,12 @@ RecordStore.prototype = {
 
   addRecord: function(record){
     this.inventory.push(record);
+  },
+
+  listInventory: function(){
+    return this.inventory;
   }
+
 }
 
 module.exports = RecordStore;
