@@ -17,6 +17,11 @@ RecordStore.prototype = {
 
   listInventory: function(){
     return this.inventory;
+  },
+
+  finances: function(){
+    var inventorySum = _.sumBy(this.inventory, 'price');
+    return "Balance is: £" + this.balance/100 + ", inventory value is: £" + inventorySum/100;
   }
 
 }
