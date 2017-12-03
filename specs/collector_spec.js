@@ -96,7 +96,14 @@ describe("Collector Tests", function(){
     var order = collector3.orderValue("asc");
     assert.deepStrictEqual(order, [record1,record2]);
   });
-  it("should be able to sort records by value descending", function(){});
+  it("should be able to sort records by value descending", function(){
+    record_store1.addRecord(record1);
+    record_store1.addRecord(record2);
+    collector3.buyRecord(record_store1, record1);
+    collector3.buyRecord(record_store1, record2);
+    var order = collector3.orderValue("desc");
+    assert.deepStrictEqual(order, [record2,record1]);
+  });
   it("should be able to compare value of collection with another collector", function(){});
 
 
