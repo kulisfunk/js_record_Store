@@ -5,7 +5,7 @@ var RecordStore = function(name, city){
   this.name = name;
   this.city = city;
   this.inventory = [];
-  this.balance = 100000;
+  this.balance = 10000;
 };
 
 
@@ -41,6 +41,16 @@ RecordStore.prototype = {
     var album =  this.inventory.find(function(record){
       return record.genre === genre;
     })
+    return album;
+  },
+
+  sellRecord: function(title){
+    var item =  this.inventory.find(function(record){
+      return record.title === title;
+    })
+    this.balance -= item.price;
+    var album = _.remove(this.inventory, {title: title});
+
     return album;
   }
 

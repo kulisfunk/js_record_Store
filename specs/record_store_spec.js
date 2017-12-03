@@ -21,7 +21,7 @@ describe("RecordStore tests", function(){
       assert.strictEqual(record_store1.city, "Glasgow");
     });
     it("should have a balance", function(){
-      assert.strictEqual(record_store1.balance, 100000);
+      assert.strictEqual(record_store1.balance, 10000);
     });
     it("should have empty inventory", function(){
       assert.strictEqual(record_store1.inventory.length, 0);
@@ -46,7 +46,7 @@ describe("RecordStore tests", function(){
       record_store1.addRecord(record1);
       record_store1.addRecord(record2);
       var finances = record_store1.finances();
-      assert.strictEqual(finances, "Balance is: £1000, inventory value is: £28");
+      assert.strictEqual(finances, "Balance is: £100, inventory value is: £28");
     });
     it("should list all records by genre", function(){
       record_store1.addRecord(record1);
@@ -57,10 +57,10 @@ describe("RecordStore tests", function(){
     it("should be able to sell a record", function(){
       record_store1.addRecord(record1);
       record_store1.addRecord(record2);
-      var sold = record_store1.sellRecord(record2);
-      assert.deepStrictEqual(sold, record2);
+      var sold = record_store1.sellRecord("Beaucoup Fish");
+      assert.deepStrictEqual(sold, [record2]);
       var inventory = record_store1.listInventory();
-      assert.strictEqual(inventory,[record1]);
-      assert.strictEqual(record_store1.balance, 1500);
+      assert.deepStrictEqual(inventory, [record1]);
+      assert.strictEqual(record_store1.balance, 8700);
     });
 })
