@@ -50,7 +50,7 @@ describe("Collector Tests", function(){
     record_store1.addRecord(record1);
     record_store1.addRecord(record2);
     collector1.buyRecord(record_store1, record1);
-    
+    assert.strictEqual(collector1.budget, 800);
   });
   it("shouldn't be able to buy record if insufficient funds", function(){});
   it("should be able to get total value of collection", function(){});
