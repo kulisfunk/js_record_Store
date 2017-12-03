@@ -41,6 +41,10 @@ Collector.prototype = {
     var genreSum = _.sumBy(albums, 'price');
     return genreSum;
   }
+  },
+
+  findMostValuable: function(){
+    return _.last(_.orderBy(this.collection, 'price'));
   }
 }
 
