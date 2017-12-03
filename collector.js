@@ -22,6 +22,8 @@ Collector.prototype = {
     var sale = _.remove(this.collection, {title: title});
     var array = record_store.inventory.concat(sale);
     record_store.inventory = array;
+    this.budget += record.price;
+    record_store.balance -= record.price;
   }
 }
 
