@@ -21,5 +21,18 @@ describe("Collector Tests", function(){
     collector1 = new Collector("Martin", 2000);
 
   })
-  
+
+  it("should be able to buy record", function(){});
+  it("should be able to sell record", function(){});
+  it("should have cash that increases when record sold", function(){});
+  it("should have cash that decreases when record bought", function(){});
+  it("shouldn't be able to buy record if insufficient funds", function(){});
+  it("should be able to get total value of collection", function(){});
+  it("should be able to get total value of records of given genre", function(){});
+  it("should be able to view most valuable record", function(){});
+  it("should be able to sort records by value ascending", function(){});
+  it("should be able to sort records by value descending", function(){});
+  it("should be able to compare value of collection with another collector", function(){});
+
+
 })
