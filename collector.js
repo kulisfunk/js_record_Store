@@ -45,6 +45,10 @@ Collector.prototype = {
 
   findMostValuable: function(){
     return _.last(_.orderBy(this.collection, 'price'));
+  },
+
+  orderValue: function(direction){
+    return _.orderBy(this.collection, ['price'], [direction]);
   }
 }
 
