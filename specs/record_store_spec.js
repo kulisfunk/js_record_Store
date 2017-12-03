@@ -54,4 +54,13 @@ describe("RecordStore tests", function(){
       var genre = record_store1.genreList("Electronic");
       assert.deepStrictEqual(genre, record2);
     });
+    it("should be able to sell a record", function(){
+      record_store1.addRecord(record1);
+      record_store1.addRecord(record2);
+      var sold = record_store1.sellRecord(record2);
+      assert.deepStrictEqual(sold, record2);
+      var inventory = record_store1.listInventory();
+      assert.strictEqual(inventory,[record1]);
+      assert.strictEqual(record_store1.balance, 1500);
+    });
 })
