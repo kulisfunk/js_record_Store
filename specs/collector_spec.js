@@ -39,8 +39,18 @@ describe("Collector Tests", function(){
     assert.deepStrictEqual(inventory, [record2, record1]);
     assert.deepStrictEqual(collector1.collection, []);
   });
-  it("should have cash that increases when record sold", function(){});
-  it("should have cash that decreases when record bought", function(){});
+  it("should have cash that increases when record sold", function(){
+    record_store1.addRecord(record1);
+    record_store1.addRecord(record2);
+    collector1.buyRecord(record_store1, record1);
+    collector1.sellRecord(record_store1, record1);
+    assert.strictEqual(collector1.budget, 3200);
+  });
+  it("should have cash that decreases when record bought", function(){
+    record_store1.addRecord(record1);
+    record_store1.addRecord(record2);
+    collector1.buyRecord(record_store1, record1);
+  });
   it("shouldn't be able to buy record if insufficient funds", function(){});
   it("should be able to get total value of collection", function(){});
   it("should be able to get total value of records of given genre", function(){});
