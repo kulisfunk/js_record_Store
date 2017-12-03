@@ -22,7 +22,13 @@ describe("Collector Tests", function(){
 
   })
 
-  it("should be able to buy record", function(){});
+  it("should be able to buy record", function(){
+    record_store1.addRecord(record1);
+    record_store1.addRecord(record2);
+    collector1.buyRecord(record1);
+    assert.deepStrictEqual(record_store1.listInventory, [record2]);
+    assert.deepStrictEqual(collector1.collection, [record1]);
+  });
   it("should be able to sell record", function(){});
   it("should have cash that increases when record sold", function(){});
   it("should have cash that decreases when record bought", function(){});
