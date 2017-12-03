@@ -88,7 +88,14 @@ describe("Collector Tests", function(){
     var valuable = collector3.findMostValuable();
     assert.deepStrictEqual(valuable, record2);
   });
-  it("should be able to sort records by value ascending", function(){});
+  it("should be able to sort records by value ascending", function(){
+    record_store1.addRecord(record1);
+    record_store1.addRecord(record2);
+    collector3.buyRecord(record_store1, record1);
+    collector3.buyRecord(record_store1, record2);
+    var order = collector3.orderAscending();
+    assert.deepStrictEqual(order, [record1,record2]);
+  });
   it("should be able to sort records by value descending", function(){});
   it("should be able to compare value of collection with another collector", function(){});
 
