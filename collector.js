@@ -15,6 +15,8 @@ Collector.prototype = {
     var purchase = record_store.sellRecord(title);
     var array = this.collection.concat(purchase);
     this.collection = array;
+    this.budget -= record.price;
+    record_store.balance += record.price;
   },
 
   sellRecord: function(record_store, record){

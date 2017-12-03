@@ -61,6 +61,6 @@ describe("RecordStore tests", function(){
       assert.deepStrictEqual(sold, [record2]);
       var inventory = record_store1.listInventory();
       assert.deepStrictEqual(inventory, [record1]);
-      assert.strictEqual(record_store1.balance, 8700);
+      assert.strictEqual(record_store1.balance, 11300);
     });
 })

@@ -44,7 +44,7 @@ describe("Collector Tests", function(){
     record_store1.addRecord(record2);
     collector1.buyRecord(record_store1, record1);
     collector1.sellRecord(record_store1, record1);
-    assert.strictEqual(collector1.budget, 3200);
+    assert.strictEqual(collector1.budget, 2000);
   });
   it("should have cash that decreases when record bought", function(){
     record_store1.addRecord(record1);
