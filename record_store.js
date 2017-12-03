@@ -48,7 +48,7 @@ RecordStore.prototype = {
     var item =  this.inventory.find(function(record){
       return record.title === title;
     })
-    this.balance -= item.price;
+    this.balance += item.price;
     var album = _.remove(this.inventory, {title: title});
 
     return album;
