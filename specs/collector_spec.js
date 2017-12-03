@@ -9,6 +9,8 @@ describe("Collector Tests", function(){
   var record_store1;
   var record1;
   var record2;
+  var record3;
+  var record4;
   var collector1;
   var collector2;
   var collector3;
@@ -20,9 +22,12 @@ describe("Collector Tests", function(){
     record_store1 = new RecordStore("Disc World", "Glasgow");
     record1 = new Record("U2", "Joshua Tree", "Rock", 1200);
     record2 = new Record("Cocteau Twins", "Treasure", "Indie", 1400);
+    record3 = new Record("Pink Floyd", "Animals", "Rock", 1500);
+    record4 = new Record("Underworld", "Beaucoup Fish", "Electronic", 1300);
     collector1 = new Collector("Martin", 2000);
     collector2 = new Collector("Martin", 1000);
     collector3 = new Collector("Martin", 3000);
+    collector4 = new Collector("Martin", 3000);
 
 
   })
@@ -104,7 +109,19 @@ describe("Collector Tests", function(){
     var order = collector3.orderValue("desc");
     assert.deepStrictEqual(order, [record2,record1]);
   });
-  it("should be able to compare value of collection with another collector", function(){});
+  it("should be able to compare value of collection with another collector", function(){
+    record_store1.addRecord(record1);
+    record_store1.addRecord(record2);
+    record_store1.addRecord(record3);
+    record_store1.addRecord(record4);
+    collector3.buyRecord(record_store1, record1);
+    collector3.buyRecord(record_store1, record2);
+    collector4.buyRecord(record_store1, record3);
+    collector4.buyRecord(record_store1, record4);
+    var compare = collector3.compareCollections(collector4);
+    assert.strictEqual(compare, "Your collection is worth £26, their collection is worth £28")
+
+  });
 
 
 })
