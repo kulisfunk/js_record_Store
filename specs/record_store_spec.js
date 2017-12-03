@@ -51,7 +51,7 @@ describe("RecordStore tests", function(){
     it("should list all records by genre", function(){
       record_store1.addRecord(record1);
       record_store1.addRecord(record2);
-      var genre = record_store1.genreList();
+      var genre = record_store1.genreList("Electronic");
       assert.deepStrictEqual(genre, record2);
     });
 })

@@ -34,6 +34,14 @@ RecordStore.prototype = {
     return "Artist: " + album.artist + ", title: " + album.title +
     ", genre: " + album.genre + ", price: £" + (album.price/100);
 
+  },
+
+  genreList: function(genre){
+
+    var album =  this.inventory.find(function(record){
+      return record.genre === genre;
+    })
+    return album;
   }
 
 }
