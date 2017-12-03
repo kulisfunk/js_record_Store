@@ -56,10 +56,11 @@ describe("Collector Tests", function(){
     assert.strictEqual(collector1.budget, 800);
   });
   it("shouldn't be able to buy record if insufficient funds", function(){
-    ecord_store1.addRecord(record1);
+    record_store1.addRecord(record1);
     record_store1.addRecord(record2);
-    collector1.buyRecord(record_store1, record1);
-    assert.strictEqual(collector1.budget, 1000);
+    collector2.buyRecord(record_store1, record1);
+    assert.strictEqual(collector2.budget, 1000);
+    assert.deepStrictEqual(collector2.collection, []);
   });
   it("should be able to get total value of collection", function(){});
   it("should be able to get total value of records of given genre", function(){});
