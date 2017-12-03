@@ -67,9 +67,9 @@ describe("Collector Tests", function(){
   it("should be able to get total value of collection", function(){
     record_store1.addRecord(record1);
     record_store1.addRecord(record2);
-    collector1.buyRecord(record_store1, record1);
-    collector1.buyRecord(record_store1, record2);
-    var total = collector1.getValue();
+    collector3.buyRecord(record_store1, record1);
+    collector3.buyRecord(record_store1, record2);
+    var total = collector3.getValue();
     assert.strictEqual(total, 2600);
   });
   it("should be able to get total value of records of given genre", function(){});

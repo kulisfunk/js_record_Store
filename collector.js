@@ -28,6 +28,10 @@ Collector.prototype = {
     record_store.inventory = array;
     this.budget += record.price;
     record_store.balance -= record.price;
+  },
+  getValue: function(){
+    var collectionSum = _.sumBy(this.collection, 'price');
+    return collectionSum;
   }
 }
 
