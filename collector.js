@@ -29,9 +29,18 @@ Collector.prototype = {
     this.budget += record.price;
     record_store.balance -= record.price;
   },
-  getValue: function(){
+  getValue: function(genre){
+    if(genre == null){
     var collectionSum = _.sumBy(this.collection, 'price');
     return collectionSum;
+  }else{
+    var albums = []
+    albums.push(this.collection.find(function(record){
+      return record.genre === genre;
+    }))
+    var genreSum = _.sumBy(albums, 'price');
+    return genreSum;
+  }
   }
 }
 
