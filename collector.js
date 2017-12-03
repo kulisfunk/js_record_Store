@@ -49,6 +49,11 @@ Collector.prototype = {
 
   orderValue: function(direction){
     return _.orderBy(this.collection, ['price'], [direction]);
+  },
+  compareCollections: function(collector){
+    var your = this.getValue();
+    var their = _.sumBy(collector.collection, 'price');
+    return "Your collection is worth £" + your/100 + ", their collection is worth £" + their/100;
   }
 }
 
