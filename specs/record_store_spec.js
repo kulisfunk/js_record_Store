@@ -31,9 +31,9 @@ describe("RecordStore tests", function(){
       record_store1.addRecord(record2);
       assert.strictEqual(record_store1.inventory.length, 2);
     });
-    xit("should return record properties as a string", function(){
+    it("should return record properties as a string", function(){
       record_store1.addRecord(record1);
-      var result = record_store1.details("Animals");
+      var result = record_store1.details('Animals');
       assert.deepStrictEqual(result, "Artist: Pink Floyd, title: Animals, genre: Rock, price: £15");
     });
     it("should list inventory", function(){

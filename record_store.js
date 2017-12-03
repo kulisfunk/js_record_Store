@@ -17,7 +17,6 @@ RecordStore.prototype = {
 
   listInventory: function(){
     var inventory = this.inventory;
-    console.log(inventory);
     return inventory;
   },
 
@@ -25,6 +24,16 @@ RecordStore.prototype = {
   finances: function(){
     var inventorySum = _.sumBy(this.inventory, 'price');
     return "Balance is: £" + this.balance/100 + ", inventory value is: £" + inventorySum/100;
+  },
+
+  details: function(title){
+
+    var album =  this.inventory.find(function(record){
+      return record.title === title;
+    })
+    return "Artist: " + album.artist + ", title: " + album.title +
+    ", genre: " + album.genre + ", price: £" + (album.price/100);
+
   }
 
 }
