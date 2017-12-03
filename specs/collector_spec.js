@@ -10,6 +10,7 @@ describe("Collector Tests", function(){
   var record1;
   var record2;
   var collector1;
+  var collector2;
 
 
 
@@ -19,6 +20,8 @@ describe("Collector Tests", function(){
     record1 = new Record("U2", "Joshua Tree", "Rock", 1200);
     record2 = new Record("Cocteau Twins", "Treasure", "Indie", 1400);
     collector1 = new Collector("Martin", 2000);
+    collector2 = new Collector("Martin", 1000);
+
 
   })
 
@@ -52,7 +55,12 @@ describe("Collector Tests", function(){
     collector1.buyRecord(record_store1, record1);
     assert.strictEqual(collector1.budget, 800);
   });
-  it("shouldn't be able to buy record if insufficient funds", function(){});
+  it("shouldn't be able to buy record if insufficient funds", function(){
+    ecord_store1.addRecord(record1);
+    record_store1.addRecord(record2);
+    collector1.buyRecord(record_store1, record1);
+    assert.strictEqual(collector1.budget, 1000);
+  });
   it("should be able to get total value of collection", function(){});
   it("should be able to get total value of records of given genre", function(){});
   it("should be able to view most valuable record", function(){});
